@@ -8,9 +8,7 @@ const loadConfigs = env =>
 
 const SRC_DIR = path.resolve("./src");
 
-const config = (
-    { mode, presets } = { mode: "development", presets: "react" }
-) =>
+const config = ({ mode, presets } = { mode: "production", presets: "react" }) =>
     webpackMerge(
         {
             mode,
