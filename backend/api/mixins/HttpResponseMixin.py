@@ -1,6 +1,6 @@
-from rest_framework.responses import Response
+from rest_framework.response import Response
 
 
-class HttpResponseMixin():
-    def render_to_reponse(self, data, status):
+class HttpResponseMixin(object):
+    def render_to_response(self, data, status):
         return Response(data, status)

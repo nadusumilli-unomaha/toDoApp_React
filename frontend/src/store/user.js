@@ -1,18 +1,27 @@
-const REQUEST_SUCCESS = "REQUEST_SUCCESS";
-const REQUEST_FAILURE = "REQUEST_FAILURE";
-const REQUEST_LOADING = "REQUEST_LOADING";
+import * as user_actions from "../actions/userActions";
 
 const initialState = {
-    isAuthenticated: false
+    id: null,
+    username: "",
+    email: "",
+    isAuthenticated: false,
+    isAdmin: false
 };
 
 const user = (state = initialState, action) => {
     switch (action.type) {
-        case REQUEST_SUCCESS:
+        case user_actions.REQUEST_SUCCESS:
+            return {
+                ...state,
+                id: action.payload.id,
+                username: action.payload.username,
+                email: action.payload.email,
+                isAuthenticated: action.payload.isAuthenticated,
+                isAdmin: action.payload.isAdmin
+            };
+        case user_actions.REQUEST_FAILURE:
             return state;
-        case REQUEST_FAILURE:
-            return state;
-        case REQUEST_LOADING:
+        case user_actions.REQUEST_LOADING:
             return state;
         default:
             return state;
