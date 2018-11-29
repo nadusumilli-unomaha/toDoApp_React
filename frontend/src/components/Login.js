@@ -35,6 +35,10 @@ class Login extends Component {
     };
 
     render() {
+        const { user } = this.props;
+        if (user.isAuthenticated) {
+            this.props.history.push("/");
+        }
         return (
             <div className="container">
                 <div className="col-md-6 offset-md-3">

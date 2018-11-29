@@ -1,1 +1,1 @@
-from .HttpResponseMixin import HttpResponseMixin
+from .SessionResponseMixin import SessionResponseMixin

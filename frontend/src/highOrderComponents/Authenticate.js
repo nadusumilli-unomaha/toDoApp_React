@@ -7,9 +7,20 @@ const Authenticate = ComposedComponent => {
     class Authenticate extends Component {
         constructor(props) {
             super(props);
-            if (!props.isAuthenticated && localStorage.todo_token) {
+            if (localStorage.todo_token && !props.isAuthenticated) {
+                const { userStatus } = this.props;
+                const token = localStorage.todo_token || "";
+                console.log(token);
+                userStatus({ token });
             } else if (!props.isAuthenticated) {
                 props.history.push("/login");
+            }
+        }
+
+        componentDidUpdate() {
+            const { isAuthenticated } = this.props;
+            if (!isAuthenticated) {
+                this.props.history.push("/login");
             }
         }
 

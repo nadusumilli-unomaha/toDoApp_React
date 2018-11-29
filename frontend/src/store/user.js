@@ -11,6 +11,7 @@ const initialState = {
 const user = (state = initialState, action) => {
     switch (action.type) {
         case user_actions.REQUEST_SUCCESS:
+            if (action.payload.status != 200) return { ...initialState };
             return {
                 ...state,
                 id: action.payload.id,
@@ -20,7 +21,14 @@ const user = (state = initialState, action) => {
                 isAdmin: action.payload.isAdmin
             };
         case user_actions.REQUEST_FAILURE:
-            return state;
+            return {
+                ...state,
+                id: action.payload.id,
+                username: action.payload.username,
+                email: action.payload.email,
+                isAuthenticated: action.payload.isAuthenticated,
+                isAdmin: action.payload.isAdmin
+            };
         case user_actions.REQUEST_LOADING:
             return state;
         default:

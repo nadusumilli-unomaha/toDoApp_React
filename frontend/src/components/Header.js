@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../../assets/css/Header.css";
 import Logout from "../pages/Logout";
+import { Link } from "react-router-dom";
 import { PropTypes } from "prop-types";
 
 class Header extends Component {
@@ -50,7 +51,9 @@ class Header extends Component {
                             />
                         ) : (
                             <li className="nav-item">
-                                <a className="nav-link">Login</a>
+                                <Link to="/login" className="nav-link">
+                                    Login
+                                </Link>
                             </li>
                         )}
                     </ul>
