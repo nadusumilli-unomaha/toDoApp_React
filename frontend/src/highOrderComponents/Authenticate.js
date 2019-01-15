@@ -7,20 +7,19 @@ const Authenticate = ComposedComponent => {
     class Authenticate extends Component {
         constructor(props) {
             super(props);
-            if (localStorage.todo_token && !props.isAuthenticated) {
-                const { userStatus } = this.props;
+            const { is_authenticated, history, userStatus } = props;
+            if (localStorage.todo_token && !is_authenticated) {
                 const token = localStorage.todo_token || "";
-                console.log(token);
                 userStatus({ token });
-            } else if (!props.isAuthenticated) {
-                props.history.push("/login");
+            } else if (!is_authenticated) {
+                history.push("/login");
             }
         }
 
         componentDidUpdate() {
-            const { isAuthenticated } = this.props;
-            if (!isAuthenticated) {
-                this.props.history.push("/login");
+            const { is_authenticated, history } = this.props;
+            if (!is_authenticated) {
+                history.push("/login");
             }
         }
 
@@ -30,11 +29,11 @@ const Authenticate = ComposedComponent => {
     }
 
     Authenticate.protoType = {
-        isAuthenticated: PropTypes.bool
+        is_authenticated: PropTypes.bool
     };
 
     const MapStateToProps = ({ user }) => ({
-        isAuthenticated: user.isAuthenticated
+        is_authenticated: user.is_authenticated
     });
 
     return connect(

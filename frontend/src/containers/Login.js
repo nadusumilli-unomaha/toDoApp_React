@@ -4,7 +4,7 @@ import { loginUser } from "../actions/userActions";
 import Login from "../components/Login";
 
 const MapStateToProps = ({ user }) => ({
-    user: user
+    user
 });
 
 export default connect(

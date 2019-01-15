@@ -1,5 +1,5 @@
 from django.contrib import admin
-from api.models import (
+from api.v1.models import (
     Task,
 )
 

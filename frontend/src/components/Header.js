@@ -29,22 +29,22 @@ class Header extends Component {
                     data-target="#navbarContent"
                     aria-controls="navbarContent"
                     aria-expanded="false"
-                    aria-lable="Toggle Navigation"
+                    aria-labelledby="Toggle Navigation"
                 >
                     <span className="navbar-toggler-icon" />
                 </button>
-                <div class="collapse navbar-collapse" id="navbarContent">
+                <div className="collapse navbar-collapse" id="navbarContent">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item active">
                             <a className="nav-link" href="#">
-                                Home<span class="sr-only">(current)</span>
+                                Home<span className="sr-only">(current)</span>
                             </a>
                         </li>
                     </ul>
 
                     <ul className="navbar-nav ml-auto">
                         {/* Auth status checks. */}
-                        {this.props.user.isAuthenticated ? (
+                        {this.props.user.is_authenticated ? (
                             <Logout
                                 username={this.props.user.username}
                                 handleLogout={this.handleLogout}

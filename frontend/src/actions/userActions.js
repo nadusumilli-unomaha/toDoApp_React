@@ -9,8 +9,8 @@ const HTTP_POST = "post";
 const HTTP_GET = "get";
 const HTTP_DELETE = "delete";
 
-const SESSION_ENDPOINT = "/api/session";
-const REGISTER_ENDPOINT = "/api/register";
+const SESSION_ENDPOINT = "/api/v1/session/";
+const REGISTER_ENDPOINT = "/api/v1/register/";
 
 const userRequest = (
     user_details,
@@ -46,10 +46,7 @@ const userRequest = (
                 payload: { ...res.data, status: res.status }
             });
         },
-        err => {
-            console.log(err);
-            dispatch({ type: REQUEST_FAILURE, payload: err });
-        }
+        err => dispatch({ type: REQUEST_FAILURE, payload: err.response.data })
     );
 };
 

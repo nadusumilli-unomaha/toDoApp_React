@@ -1,11 +1,8 @@
 from rest_framework import serializers
-from django.contrib.auth import get_user_model
 
-from api.models import (
+from api.v1.models import (
     Task
 )
-
-User = get_user_model()
 
 
 class TaskSerializer(serializers.HyperlinkedModelSerializer):
@@ -15,15 +12,15 @@ class TaskSerializer(serializers.HyperlinkedModelSerializer):
     '''
 
     class Meta:
-        fields = ("participants", "content", "status")
         model = Task
+        fields = ('id', "participants", "content", "status",
+                  'priority', 'due_date', 'owner')
 
     def validate_content(self, value):
         if len(value) > 10000:
             raise serializers.ValidationError(
                 "Please be brief about your content.")
+        return value
 
     def validate_priority(self, value):
-        if(type(value) is not int):
-            raise serializers.ValidationError(
-                'Priority has to be a number.')
+        return value

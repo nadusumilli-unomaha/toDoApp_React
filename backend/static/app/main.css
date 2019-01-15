@@ -1,3 +1,45 @@
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: #f8f9fa;
+  color: black;
+  text-align: center; }
+
 .navbar-custom-color {
   background-color: #e3f2fd; }
+
+.login-fatimes {
+  margin-left: 150px; }
+
+.wrapper-login {
+  position: relative; }
+
+.wrapper-login i.fa-check {
+  position: absolute;
+  top: 15px;
+  left: 450px; }
+
+.wrapper-login i.fa-times {
+  position: absolute;
+  top: 15px;
+  left: 450px; }
+
+.wrapper {
+  position: relative; }
+
+i.fa-check {
+  position: absolute;
+  top: 15px;
+  left: 310px; }
+
+i.fa-times {
+  position: absolute;
+  top: 15px;
+  left: 310px; }
+
+.register-fatimes {
+  margin-left: 330px; }
 

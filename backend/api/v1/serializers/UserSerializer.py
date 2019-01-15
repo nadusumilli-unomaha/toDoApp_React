@@ -5,9 +5,6 @@ User = get_user_model()
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
-    '''
-        A serializer for users registering into the app.
-    '''
     class Meta:
-        fields = ('username', 'email')
         model = User
+        fields = ('id', 'username', 'email')
