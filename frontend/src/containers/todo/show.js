@@ -1,5 +1,6 @@
+import React from "react";
 import { connect } from "react-redux";
-import Home from "../components/Home";
+import Todo from "../../components/todo/show";
 
 const MapStateToProps = ({ user }) => ({
     user
@@ -8,4 +9,4 @@ const MapStateToProps = ({ user }) => ({
 export default connect(
     MapStateToProps,
     {}
-)(Home);
+)(Todo);

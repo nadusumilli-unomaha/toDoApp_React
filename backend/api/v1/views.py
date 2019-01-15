@@ -43,6 +43,9 @@ from api.v1.serializers import (
 User = get_user_model()
 
 
+from django_filters import rest_framework as filters
+
+
 class UserViewSet(viewsets.ModelViewSet):
     '''
         User View set for all the methods.
@@ -60,6 +63,8 @@ class TaskViewSet(viewsets.ModelViewSet):
     serializer_class = TaskSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
     queryset = Task.objects.all()
+    filter_backends = (filters.DjangoFilterBackend,)
+    filterset_fields = ('owner',)
 
 
 @method_decorator(csrf_exempt, name='dispatch')

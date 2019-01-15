@@ -86,7 +86,7 @@ class Login extends Component {
         const password_class = this.shouldShowError("password", errors);
         const isEnabled = false; //Object.keys(errors).some(x => errors[x]);
         if (user.is_authenticated) {
-            history.push("/todo");
+            history.push("/home");
         }
         return (
             <div className="container">
