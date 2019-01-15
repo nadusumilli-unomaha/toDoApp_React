@@ -16,10 +16,10 @@ python manage.py createsuperuser
 After runnning the commands you will have the database setup and can start using the app as an admin.
 
 ### App information
-* You can access the app at [Ehour](http://localhost). 
-* You can access the api endpoints at [Ehour API](http://localhost/api/)
+* You can access the app at [To Do App](http://localhost). 
+* You can access the api endpoints at [To Do App API](http://localhost/api/)
   * All data can be access once the user has permissions to authenticate
-* You can access the admin dashboard at [Ehour Admin](http://localhost/admin/)
+* You can access the admin dashboard at [To Do Admin](http://localhost/admin/)
   * You can create users from the admin dashboard that can access the app.
 
 ## Frontend instruction
